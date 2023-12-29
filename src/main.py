@@ -15,6 +15,7 @@ def password(
         False, "--no-special-characters", "-nsc", help="Exclude special characters"
     ),
     no_numbers: bool = typer.Option(False, "--no-numbers", "-nn", help="Exclude numbers"),
+    count: int = typer.Option(1, "--count", "-c", help="Number of passwords to generate"),
 ):
     """
     Generate a random password.
@@ -24,11 +25,12 @@ def password(
         no_special_characters (bool): Exclude special characters if True. Default is False.
         no_numbers (bool): Exclude numbers if True. Default is False.
     """
-    typer.echo(
-        password_maker(
-            length=length, special_characters=not no_special_characters, numbers=not no_numbers
+    for _ in range(count):
+        typer.echo(
+            password_maker(
+                length=length, special_characters=not no_special_characters, numbers=not no_numbers
+            )
         )
-    )
 
 
 if __name__ == "__main__":
