@@ -54,6 +54,17 @@ def history():
         echo("No passwords generated yet.")
 
 
+@app.command(name="clr")
+def clear():
+    """
+    Clear the history of generated passwords.
+    """
+    with open("generated_passwords.txt", "w") as f:
+        f.write("")
+
+    echo("History cleared.")
+
+
 if __name__ == "__main__":
     past_passwords = []
     with open("generated_passwords.txt", "r") as f:
