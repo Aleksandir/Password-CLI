@@ -8,7 +8,9 @@ app = typer.Typer()
 
 @app.command()
 def password(
-    length: int = typer.Option(10, help="The length of the password", show_default=True),
+    length: int = typer.Option(
+        10, "--length", "--len", help="The length of the password", show_default=True
+    ),
     no_special_characters: bool = typer.Option(
         False, "--no-special-characters", "-nsc", help="Exclude special characters"
     ),
