@@ -10,7 +10,7 @@ app = Typer()
 @app.command(name="gen")
 def generate(
     length: int = Option(
-        10, "--length", "--len", help="The length of the password", show_default=True
+        12, "--length", "--len", help="The length of the password", show_default=True
     ),
     no_special_characters: bool = Option(
         False, "--no-special-characters", "-nsc", help="Exclude special characters"
