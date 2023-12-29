@@ -1,11 +1,7 @@
-# password creater to take as arguments
-# password length
-# special characters (default true)
-# numbers (default true)
-# TODO: add readablity to the password as an option
-
 import random
 import string
+
+# TODO: add readability to the password as an option
 
 
 def password_maker(length: int = 10, special_characters: bool = True, numbers: bool = True):
