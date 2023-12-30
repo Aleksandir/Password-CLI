@@ -21,4 +21,8 @@ To install the Password-CLI tool, follow these steps:
 
 ## Usage
 
-To generate a random password, use the `gen` command:
+To call the program, use the command `python main.py` followed by the desired options.
+
+## Options
+
+Use python main.py --help to see the options, below are some examples of commands:
