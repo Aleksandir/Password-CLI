@@ -26,3 +26,10 @@ To call the program, use the command `python main.py` followed by the desired op
 ## Options
 
 Use python main.py --help to see the options, below are some examples of commands:
+
+- `python main.py gen --length 20` - Generates a password with a length of 20 characters
+- `python main.py gen --length 20 --nsc` - Generates a password with a length of 20 characters and no special characters
+- `python main.py gen --length 20 --nn` - Generates a password with a length of 20 characters and no numbers
+- `python main.py gen --readable` - Generates a readable password with the default length of 12 characters
+- `python main.py clear` - Clears the history of generated passwords
+- `python main.py history` - Displays the history of generated passwords
