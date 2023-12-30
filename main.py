@@ -66,7 +66,7 @@ def generate(
         # \033[92m is the ANSI escape code for green
         echo("\033[92mPassword copied to clipboard.\033[0m")
 
-    with open("generated_passwords.txt", "a") as f:
+    with open("resources/generated_passwords.txt", "a") as f:
         for password in passwords:
             f.write(password + "\n")
 
@@ -88,7 +88,7 @@ def clear():
     """
     Clear the history of generated passwords.
     """
-    with open("generated_passwords.txt", "w") as f:
+    with open("resources/generated_passwords.txt", "w") as f:
         f.write("")
 
     echo("History cleared.")
@@ -96,7 +96,7 @@ def clear():
 
 if __name__ == "__main__":
     past_passwords = []
-    with open("generated_passwords.txt", "r") as f:
+    with open("resources/generated_passwords.txt", "r") as f:
         past_passwords = f.read().splitlines()
 
     app()
