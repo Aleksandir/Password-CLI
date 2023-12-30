@@ -1,6 +1,6 @@
 from typer import Option, Typer, echo
 
-from src.password_maker import password_maker
+from src.password_maker import password_maker, readable_password
 
 app = Typer()
 
@@ -17,6 +17,7 @@ def generate(
     ),
     no_numbers: bool = Option(False, "--no-numbers", "-nn", help="Exclude numbers"),
     count: int = Option(1, "--count", "-c", help="Number of passwords to generate"),
+    readable: bool = Option(False, "--readable", "-r", help="Generate a readable password"),
 ):
     """
     Generate a random password.
@@ -26,16 +27,30 @@ def generate(
         no_special_characters (bool): Exclude special characters if True. Default is False.
         no_numbers (bool): Exclude numbers if True. Default is False.
     """
+    # generate multiple passwords
     passwords = []
-    for i in range(count):
-        passwords.append(
-            password_maker(
+
+    if readable:
+        for i in range(count):
+            # generate a password using the readable_password function
+            passwords = readable_password(
                 length=length,
                 special_characters=not no_special_characters,
                 numbers=not no_numbers,
             )
-        )
-        echo(f"Password {i+1}: {passwords[i]}")
+            echo(f"Password {i+1}: {passwords}")
+
+    else:
+        for i in range(count):
+            # generate a password using the password_maker function
+            passwords.append(
+                password_maker(
+                    length=length,
+                    special_characters=not no_special_characters,
+                    numbers=not no_numbers,
+                )
+            )
+            echo(f"Password {i+1}: {passwords[i]}")
 
     with open("generated_passwords.txt", "a") as f:
         for password in passwords:
