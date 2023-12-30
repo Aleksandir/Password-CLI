@@ -10,12 +10,20 @@ app = Typer()
 @app.command(name="gen")
 def generate(
     length: int = Option(
-        12, "--length", "--len", help="The length of the password", show_default=True
+        12, "--length", "-l", help="The length of the password", show_default=True
     ),
     no_special_characters: bool = Option(
-        False, "--no-special-characters", "-nsc", help="Exclude special characters"
+        False,
+        "--no-special-characters",
+        "-nsc",
+        help="Exclude special characters (default: False)",
     ),
-    no_numbers: bool = Option(False, "--no-numbers", "-nn", help="Exclude numbers"),
+    no_numbers: bool = Option(
+        False,
+        "--no-numbers",
+        "-nn",
+        help="Exclude numbers (default: False)",
+    ),
     count: int = Option(1, "--count", "-c", help="Number of passwords to generate"),
     readable: bool = Option(False, "--readable", "-r", help="Generate a readable password"),
 ):
