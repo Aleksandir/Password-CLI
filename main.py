@@ -1,3 +1,4 @@
+import pyperclip
 from typer import Option, Typer, echo
 
 from src.password_maker import password_maker, readable_password
@@ -59,6 +60,11 @@ def generate(
                 )
             )
             echo(f"Password {i+1}: {passwords[i]}")
+    # if only one password, copy it to the clipboard
+    if count == 1:
+        pyperclip.copy(passwords[0])
+        # \033[92m is the ANSI escape code for green
+        echo("\033[92mPassword copied to clipboard.\033[0m")
 
     with open("generated_passwords.txt", "a") as f:
         for password in passwords:
