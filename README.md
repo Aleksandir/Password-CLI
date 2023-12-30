@@ -9,6 +9,7 @@ This project is a command-line interface (CLI) tool for generating random passwo
 - Generate readable passwords
 - History of generated passwords stored in a text file
 - Command to clear the history of generated passwords
+- If one password is generated, it is copied to the clipboard
 
 ## Installation
 
