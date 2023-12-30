@@ -19,6 +19,7 @@ dependencies:
   - openssl=3.2.0=h0d3ecfb_1
   - pip=23.3.2=pyhd8ed1ab_0
   - pygments=2.17.2=pyhd8ed1ab_0
+  - pyperclip=1.8.2=pyhd8ed1ab_2
   - python=3.12.1=hdf0ec26_1_cpython
   - readline=8.2=h92ec313_1
   - rich=13.7.0=pyhd8ed1ab_0
