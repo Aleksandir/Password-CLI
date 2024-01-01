@@ -2,8 +2,6 @@ import json
 import random
 import string
 
-# TODO: add readability to the password as an option
-
 
 def password_maker(
     length: int = 10, special_characters: bool = True, numbers: bool = True, readable: bool = False
